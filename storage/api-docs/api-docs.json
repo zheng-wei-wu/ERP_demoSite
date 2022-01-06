@@ -1,0 +1,92 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ERP demo site API",
+        "description": "TBD",
+        "contact": {
+            "email": "developer@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1/ERP_demoSite/public/api",
+            "description": "Localhost"
+        }
+    ],
+    "paths": {
+        "/frq/getList": {
+            "get": {
+                "tags": [
+                    "Request for quotation (FRQ)"
+                ],
+                "summary": "隨機取得詢價單資訊",
+                "description": "於最新的 20 筆報價單中回傳隨機 1 筆詢價單資訊",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/frq/getList/pk": {
+            "get": {
+                "tags": [
+                    "Request for quotation (FRQ)"
+                ],
+                "summary": "TEST",
+                "description": "TEST",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/frq/getList/test": {
+            "get": {
+                "tags": [
+                    "Request for quotation (FRQ)"
+                ],
+                "summary": "TEST",
+                "description": "TEST",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/frq/order/{InquiryID}": {
+            "get": {
+                "tags": [
+                    "Request for quotation (FRQ)"
+                ],
+                "summary": "傳送報價單資訊至 Message Bus",
+                "description": "輸入詢價單號 (InquiryID)，傳送指定報價單資訊至 Message Bus (21120004)",
+                "parameters": [
+                    {
+                        "name": "InquiryID",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Error"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
